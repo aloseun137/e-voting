@@ -1,0 +1,56 @@
+<app-header></app-header>
+<section class="page-section bg-light" id="team" *ngFor="let post of allElectionContestants">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">{{post.post_name}}</h2>
+        </div>
+        <hr>
+        <ng-container *ngIf="post.contestants.length > 2">
+
+            <div class="row">
+                <div class="col-lg-4" *ngFor= "let contestant of post.contestants">
+                    <div class="card my-2">
+                        <div class="card-body">
+                            <div class="team-member">
+                                <img class="mx-auto rounded-circle" src="/assets/assets/img/team/1.jpg" alt="" />
+                                <h4>{{contestant.contestant_name}}</h4>
+                                <h6 class="mt-2">Election: {{contestant.election}}</h6>
+                                <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+
+
+
+                            </div>
+                        </div>
+                  </div>
+
+                </div>
+
+            </div>
+        </ng-container>
+        <ng-container *ngIf="post.contestants.length < 3">
+            <div class="row">
+                <div class="col-lg-6" *ngFor= "let contestant of post.contestants">
+                    <div class="card my-2">
+                        <div class="card-body">
+                            <div class="team-member">
+                                <img class="mx-auto rounded-circle" src="/assets/assets/img/team/1.jpg" alt="" />
+                                <h4>{{contestant.contestant_name}}</h4>
+                                <h6>Election: {{contestant.election}}</h6>
+                                <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+
+
+                            </div>
+                        </div>
+                  </div>
+
+                </div>
+
+            </div>
+        </ng-container>
+
+    </div>
+</section>

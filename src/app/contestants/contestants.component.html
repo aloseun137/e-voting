@@ -1,0 +1,58 @@
+<app-header></app-header>
+<section class="page-section bg-light" id="team" >
+    <div class="container" >
+        <div class="pb-40" *ngFor="let post of electionContestants; let myIndex = index">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">{{post.post_name}}</h2>
+            </div>
+            <hr>
+            <ng-container *ngIf="post.contestants.length > 2">
+                <div class="row">
+                    <div class="col-lg-4" *ngFor= "let contestant of post.contestants; let i=index">
+                        <div class="card my-2">
+                            <div class="card-body">
+                                <div class="team-member">
+                                    <img class="mx-auto rounded-circle" src="/assets/assets/img/team/1.jpg" alt="" />
+                                    <h4>{{contestant.contestant_name}}</h4>
+                                    <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                    <div><label class="form-check-label" [for]="contestant.contestant_name">Vote</label></div>
+                                    <div class="text-center"><input type="checkbox" [disabled]="contestant.status" class="form-check-input " [id]="contestant.contestant_name"(change)="checkme(contestant.contestant_id, post.post_id, contestant.contestant_name, i, myIndex)"></div>
+
+                                </div>
+                            </div>
+                      </div>
+
+                    </div>
+
+                </div>
+            </ng-container>
+            <ng-container *ngIf="post.contestants.length < 3">
+                <div class="row">
+                    <div class="col-lg-6" *ngFor= "let contestant of post.contestants; let i=index">
+                        <div class="card my-2">
+                            <div class="card-body">
+                                <div class="team-member">
+                                    <img class="mx-auto rounded-circle" src="/assets/assets/img/team/1.jpg" alt="" />
+                                    <h4>{{contestant.contestant_name}}</h4>
+                                    <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-success btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                    <div><label class="form-check-label" [for]="contestant.contestant_name">Vote</label></div>
+                                    <div class="text-center"><input type="checkbox" [disabled]="contestant.status" class="form-check-input " [id]="contestant.contestant_name"(change)="checkme(contestant.contestant_id, post.post_id, contestant.contestant_name, i, myIndex)"></div>
+
+
+                                </div>
+                            </div>
+                      </div>
+
+                    </div>
+
+                </div>
+            </ng-container>
+        </div>
+        <button *ngIf="votes.length" type="button" (click)= "submitVotes()" class="btn btn-success btn-lg btn-block mt-4">Submit Votes</button>
+    </div>
+
+</section>

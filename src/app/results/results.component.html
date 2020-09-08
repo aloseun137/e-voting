@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="section " id="elections">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+
+            <!-- section title -->
+            <div class="col-md-12 m-3">
+                <div class="section-title text-center">
+                    <h3 class="title">Mapoly Evoting App</h3>
+                </div>
+            </div>
+
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-6" *ngFor="let election of elections">
+                        <div class="card my-2">
+                            <div class="card-body">
+                              <h5 class="card-title text-center">{{election.name}}</h5>
+                              <p class="card-text"><strong>Start Time:</strong> {{election.start_time}}</p>
+                              <p ><strong>End Time:</strong> {{election.end_time}}</p>
+                              <div class="row d-flex justify-content-center my-3" >
+                                  <div class="col-md-6">
+                                      <button class="btn btn-outline-success btn-small btn-block"(click)="viewResults(election.id)">View Results</button>
+                                  </div>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+</div>

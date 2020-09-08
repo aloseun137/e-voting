@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+.title{
+    color: green;
+    text-transform: uppercase;
+    font-family: 'PT Serif', serif;
+}
+*:not(.fa-check){
+    font-family: 'PT Serif', serif;
+}
+.card-title {
+    color: green;
+    font-weight: 200;
+}

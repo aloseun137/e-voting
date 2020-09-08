@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <form  #loginForm ="ngForm"class="form-signin" (ngSubmit)="onSubmit(loginForm)">
+      <h2 class="form-signin-heading">Evoting App</h2>
+      <div *ngIf="errorMessage !== undefined"class="alert alert-danger" role="alert">
+        {{errorMessage}}
+      </div>
+      <input type="email" #emailControl ="ngModel" class="form-control"  placeholder="Email Address" name="email" ngModel required />
+      <input type="password"  #passwordControl ="ngModel" class="form-control" placeholder="Password" name="password" ngModel required/>
+      <button [disabled]="loginForm.invalid" class="btn btn-lg btn-outline-success btn-block" type="submit"><div *ngIf="loading" class="spinner-border text-light" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>{{loading === false? "Login":""}}</button>
+    </form>
+  </div>

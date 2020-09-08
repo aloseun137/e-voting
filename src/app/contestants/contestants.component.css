@@ -1,0 +1,110 @@
+input[type="checkbox"]{
+    position: absolute;
+    left: 172px;
+    appearance: none;
+    height: 50px;
+    width: 50px;
+    color: green!important;
+    background-color: #d5d5d5;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+.col-lg-6 input[type="checkbox"]{
+    position: absolute;
+    left: 265px;
+}
+
+label{
+    font-size: 30px;
+    cursor: pointer;
+}
+input[type="checkbox"]::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    content: "\f00c";
+    font-size: 35px;
+    color: white;
+    display: none;
+    border: none;
+    outline: none;
+}
+
+input[type="checkbox"]:hover{
+    background-color: #a5a5a5;
+}
+input[type="checkbox"]:focus{
+    background-color: #a5a5a5;
+    border: none;
+    outline: none;
+}
+
+input[type="checkbox"]:checked{
+    background-color: #5bcd3e;
+    border: none;
+    outline: none;
+}
+input[type="checkbox"]:checked::after{
+    display: block;
+    border: none;
+    outline: none;
+}
+
+@media only screen and (max-width: 1440px) {
+
+}
+@media only screen and (max-width: 1024px) {
+    input[type="checkbox"] {
+        left: 142px;
+    }
+    .col-lg-6 input[type="checkbox"]{
+        position: absolute;
+        left: 220px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .col-lg-6 input[type="checkbox"]{
+        position: absolute;
+        left: 340px;
+    }
+    input[type="checkbox"]{
+        left: 340px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    input[type="checkbox"] {
+        height: 30px;
+        width: 30px;
+        left: 203px;
+    }
+    .col-lg-6 input[type="checkbox"]{
+        position: absolute;
+        left: 203px;
+    }
+    input[type="checkbox"]::after{
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    input[type="checkbox"] {
+        left: 178px;
+    }
+    .col-lg-6 input[type="checkbox"]{
+        position: absolute;
+        left: 178px;
+    }
+}
+.team-member {
+    margin-bottom: 6rem;
+}
+
+button{
+    cursor: pointer;
+}
+.pb-40 {
+    padding-bottom: 90px!important;
+}
